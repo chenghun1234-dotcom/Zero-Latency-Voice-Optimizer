@@ -15,6 +15,7 @@ import { analyzeVoiceCadence } from './engines/cadence';
 import { transformToVoiceScript } from './engines/transformer';
 import { generateSSML } from './engines/ssml';
 import { checkRateLimit, parseRapidAPIHeaders } from './middleware/rateLimit';
+import { LANDING_PAGE_HTML } from './utils/ui';
 import {
   successResponse,
   errorResponse,
@@ -240,7 +241,10 @@ export default {
 
     try {
       if ((path === '' || path === '/') && request.method === 'GET') {
-        response = handleInfo();
+        const url = new URL(request.url);
+        return new Response(LANDING_PAGE_HTML(url.origin), {
+          headers: { 'Content-Type': 'text/html; charset=utf-8' },
+        });
 
       } else if (path === '/health' && request.method === 'GET') {
         response = handleHealth();
