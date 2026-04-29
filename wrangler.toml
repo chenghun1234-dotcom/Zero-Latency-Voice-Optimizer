@@ -8,5 +8,5 @@ ENVIRONMENT = "production"
 
 [[kv_namespaces]]
 binding = "VCO_CACHE"
-id = "REPLACE_WITH_YOUR_KV_NAMESPACE_ID"
+id = "54027f54402c455b81f52d1103ca851d"
 preview_id = "REPLACE_WITH_YOUR_KV_NAMESPACE_PREVIEW_ID"
