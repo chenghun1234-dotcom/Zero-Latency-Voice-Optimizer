@@ -239,7 +239,10 @@ export default {
     let response: Response;
 
     try {
-      if (path === '/health' && request.method === 'GET') {
+      if ((path === '' || path === '/') && request.method === 'GET') {
+        response = handleInfo();
+
+      } else if (path === '/health' && request.method === 'GET') {
         response = handleHealth();
 
       } else if (path === '/info' && request.method === 'GET') {
