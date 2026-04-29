@@ -1,0 +1,19 @@
+{
+  "name": "voice-seo-optimizer",
+  "version": "1.0.0",
+  "description": "Zero-Latency Voice SEO Content Optimizer API - Privacy-Safe, LLM-Free",
+  "main": "src/index.ts",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "build": "tsc",
+    "test": "tsx scratch/test_engines.ts",
+    "type-check": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20240529.0",
+    "typescript": "^5.4.5",
+    "tsx": "^4.11.0",
+    "wrangler": "^4.0.0"
+  }
+}
